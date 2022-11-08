@@ -10,6 +10,9 @@
 #define XK_VOLD XF86XK_AudioLowerVolume
 
 
+#define FONT_MONONOKI \
+"mononoki:pixelsize=15:antialias=true:autohint=false"
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const int startwithgaps      = 1;        /* 1 means gaps are ON by default */
@@ -17,7 +20,7 @@ static const unsigned int gappx     = 10;       /* default gap value */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "mononoki:pixelsize=15:antialias=true:autohint=false" };
+static const char *fonts[]          = { FONT_MONONOKI };
 static const char dmenufont[]       = "Calling Code";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -26,10 +29,20 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_gray5[]       = "#6e6e6e";
 static const char col_cyan[]        = "#005577";
 static const char col_teal[]        = "#5AF9CE";
+static const char col_red[]         = "#AF2303";
+
+// old color scheme
+// static const char *colors[][3]      = {
+// 	/*               fg         bg         border   */
+// 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+// 	[SchemeSel]  = { col_gray1, col_gray5, col_teal  },
+// };
+
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray1, col_gray5, col_teal  },
+	[SchemeNorm] = { col_red,   col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray1, col_red,   col_red   },
 };
 
 /* tagging */
@@ -167,4 +180,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
